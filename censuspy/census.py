@@ -44,6 +44,12 @@ class bds(object):
 
 		return self._execute_request()
 
+	def net_job_creation(self, code=None):		
+		self.get_value = '?get=net_job_creation'
+		self.code = code
+
+		return self._execute_request()
+
 	def _url_builder(self, base_url, get_value):
 		other_params = self.time + self.sic1 + self.api_key
 		return base_url + get_value + self.geo + self.code + other_params
