@@ -15,25 +15,34 @@ class bds(object):
 			self.sic1 = '&sic1=' + str(sic1)
 
 	def emp(self, code=None):		
-		get_value = '?get=emp'
-		if self.geo == 'us':
-			pass
+		self.get_value = '?get=emp'
+		self.code = code
 
-		else:
-			self.code = code
-			if code == None:
-				raise ValueError('Missing code or state dimension.')
+		return self._execute_request()
 
-			else:
-				url = self._url_builder(self.BASE_URL, get_value)
-				json = self._make_request(url)
+	def estabs(self, code=None):		
+		self.get_value = '?get=estabs'
+		self.code = code
 
-				try:
-					return json[1][0]
+		return self._execute_request()
 
-				except:
-					return json
-					pass
+	def firms(self, code=None):		
+		self.get_value = '?get=firms'
+		self.code = code
+
+		return self._execute_request()
+
+	def job_creation(self, code=None):		
+		self.get_value = '?get=job_creation'
+		self.code = code
+
+		return self._execute_request()
+
+	def job_destruction(self, code=None):		
+		self.get_value = '?get=job_destruction'
+		self.code = code
+
+		return self._execute_request()
 
 	def _url_builder(self, base_url, get_value):
 		other_params = self.time + self.sic1 + self.api_key
@@ -53,10 +62,24 @@ class bds(object):
 			else:
 				return str(status)
 
-
 		except:
 			raise ValueError('Incorrect parameters led to invalid API call.')
 
+	def _execute_request(self):
+		if self.geo == 'us':
+			pass
 
+		else:
+			if self.code == None:
+				raise ValueError('Missing code or state dimension.')
 
+			else:
+				url = self._url_builder(self.BASE_URL, self.get_value)
+				json = self._make_request(url)
 
+				try:
+					return json[1][0]
+
+				except:
+					return json
+					pass
