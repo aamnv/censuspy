@@ -1,58 +1,40 @@
 import requests
+from urllib import parse
 
 class bds(object):
 
-	BASE_URL = 'https://api.census.gov/data/timeseries/bds/firms'
+	BASE_URL = 'https://api.census.gov/data/timeseries/bds/firms?'
 
-	def __init__(self, api_key=None, geo=None, time=None, sic1=0):
-		if (api_key == None or geo == None or time == None):
-			raise ValueError('Missing api_key, geo, or time dimension.')
+	def __init__(self, api_key=None, geo=None):
+		if (api_key == None or geo == None):
+			raise ValueError('Missing api_key or geo dimension.')
 
 		else:
-			self.api_key = '&key=' + api_key
+			self.api_key = api_key
 			self.geo = '&for=' + geo + ':'
-			self.time = '&time=' + str(time)
-			self.sic1 = '&sic1=' + str(sic1)
 
-	def emp(self, code=None):		
-		self.get_value = '?get=emp'
-		self.code = code
+	def get(self, metric=None, code=None, time=None, sic1=0, fage4='m', fsize='m', ifsize='m'):		
+		if (metric == None or code == None):
+			raise ValueError('Missing metric and/or code.')
 
-		return self._execute_request()
+		else:
+			self.code = code
+			self.metric = 'get=' + metric
+			self.params_dict = {
 
-	def estabs(self, code=None):		
-		self.get_value = '?get=estabs'
-		self.code = code
+								'time': str(time),
+								'sic1': str(sic1),
+								'fage4': fage4,
+								'fsize': fsize,
+								'ifsize': ifsize,
+								'key': self.api_key
 
-		return self._execute_request()
+								}
 
-	def firms(self, code=None):		
-		self.get_value = '?get=firms'
-		self.code = code
+		return self._basic_execution()
 
-		return self._execute_request()
-
-	def job_creation(self, code=None):		
-		self.get_value = '?get=job_creation'
-		self.code = code
-
-		return self._execute_request()
-
-	def job_destruction(self, code=None):		
-		self.get_value = '?get=job_destruction'
-		self.code = code
-
-		return self._execute_request()
-
-	def net_job_creation(self, code=None):		
-		self.get_value = '?get=net_job_creation'
-		self.code = code
-
-		return self._execute_request()
-
-	def _url_builder(self, base_url, get_value):
-		other_params = self.time + self.sic1 + self.api_key
-		return base_url + get_value + self.geo + self.code + other_params
+	def _url_builder(self, base_url, metric):
+		return base_url + metric + self.geo + self.code + '&' + parse.urlencode(self.params_dict)
 
 	def _make_request(self, url):
 		try:
@@ -71,7 +53,7 @@ class bds(object):
 		except:
 			raise ValueError('Incorrect parameters led to invalid API call.')
 
-	def _execute_request(self):
+	def _basic_execution(self):
 		if self.geo == 'us':
 			pass
 
@@ -80,7 +62,7 @@ class bds(object):
 				raise ValueError('Missing code or state dimension.')
 
 			else:
-				url = self._url_builder(self.BASE_URL, self.get_value)
+				url = self._url_builder(self.BASE_URL, self.metric)
 				json = self._make_request(url)
 
 				try:
