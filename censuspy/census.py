@@ -7,18 +7,18 @@ class bds(object):
 
 	def __init__(self, api_key=None, geo=None):
 		if (api_key == None or geo == None):
-			raise ValueError('Missing api_key or geo dimension.')
+			raise ValueError('Missing api_key or geo parameters.')
 
 		else:
 			self.api_key = api_key
 			self.geo = '&for=' + geo + ':'
 
 	def get(self, metric=None, code=None, time=None, sic1=0, fage4='m', fsize='m', ifsize='m'):		
-		if (metric == None or code == None):
-			raise ValueError('Missing metric and/or code.')
+		if (metric == None or code == None or time == None):
+			raise ValueError('Missing metric, code, and/or time parameters.')
 
 		else:
-			self.code = code
+			self.code = str(code)
 			self.metric = 'get=' + metric
 			self.params_dict = {
 
