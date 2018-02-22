@@ -33,7 +33,7 @@ Available Parameters
 * metric (required)
    - specify metric to pull
    - full list here: http://bit.ly/2GvGDIE
-   - all metrics/variables labelled "Economic Statistics" work
+   - all metrics/variables labelled Economic Statistics work
       + exceptions include: fage4, fsize, ifsize, sic1, year, year2
 * code (conditionally required)
    - specify state or metro FIPS code
