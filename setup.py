@@ -8,7 +8,7 @@ setup(
   author = 'Aadhi Manivannan',
   author_email = 'dnrkaseff360@gmail.com',
   url = 'https://github.com/DnrkasEFF/censuspy',
-  download_url = 'https://github.com/DnrkasEFF/censuspy/archive/0.1.tar.gz',
+  download_url = 'https://github.com/DnrkasEFF/censuspy/archive/0.2.tar.gz',
   keywords = ['census', 'python', 'wrapper'],
   install_requires=[
           'requests',
