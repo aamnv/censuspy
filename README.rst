@@ -3,7 +3,7 @@ CensusPy
 ============
 The goal of CensusPy is to expose the vast amount of data the government collects on US citizens to the broader programming community.
 
-Written as a wrapper around existing census APIs, v0.1 of CensusPy currently supports the `Business Dynamics Statistics <https://www.census.gov/data/developers/data-sets/business-dynamics.html>`_ database. But, the end goal will be to support all databases provided by the Census Bureau.
+Written as a wrapper around existing census APIs, v0.2 of CensusPy currently supports the `Business Dynamics Statistics <https://www.census.gov/data/developers/data-sets/business-dynamics.html>`_ database. But, the end goal will be to support all databases provided by the Census Bureau.
 
 Installation
 ===============
@@ -20,8 +20,8 @@ Quickstart
 ^^^^^^^^^^^^^^^^^^^^^
 Initialize the BDS object using your API key & geographic level of query::
 
-  import censuspy
-  bds = censuspy.bds(api_key=[YOUR_API_KEY_HERE], geo='state')
+  from censuspy import bds
+  bds = bds.bds(api_key=[YOUR_API_KEY_HERE], geo='state')
 
 Pull total employment numbers for Massachusetts (FIPS code 25) in 2014::
 
@@ -45,6 +45,11 @@ Broadly speaking, my goal is to cover all the business-focused datasets before m
 * County Business Patterns and Nonemployer Statistics (April 2018)
 * Economic Census (May 2018)
 * Economic Indicators (June 2018)
+
+Changelog
+===============
+* v0.1: initial beta release
+* v0.2: changed file structure to allow imports of specific database wrappers instead of having to import the entire package
 
 License
 ===============

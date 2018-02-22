@@ -2,7 +2,7 @@ from setuptools import setup
 setup(
   name = 'censuspy',
   packages = ['censuspy'], 
-  version = '0.1',
+  version = '0.2',
   license='MIT',
   description = 'Lightweight wrapper to access gov data',
   author = 'Aadhi Manivannan',
