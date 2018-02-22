@@ -21,15 +21,43 @@ Quickstart
 Initialize the BDS object using your API key & geographic level of query::
 
   from censuspy import bds
-  bds = bds.bds(api_key=[YOUR_API_KEY_HERE], geo='state')
+  state = bds.init(api_key=[YOUR_API_KEY_HERE], geo='state')
 
 Pull total employment numbers for Massachusetts (FIPS code 25) in 2014::
 
-  ma_emp = bds.get(metric='emp', code=25, time=2014)
+  ma_emp = state.get(metric='emp', code=25, time=2014)
   print(ma_emp)
 
+Available Parameters
+^^^^^^^^^^^^^^^^^^^^^
+* metric (required)
+  - specify metric to pull
+  - full list here: http://bit.ly/2GvGDIE
+  - all metrics/variables labelled "Economic Statistics" work
+    + exceptions include: fage4, fsize, ifsize, sic1, year, year2
+* code (conditionally required)
+  - specify state or metro FIPS code
+  - only required if geographic level != us
+  - FIPS state codes: http://bit.ly/2EUgw1c
+* time (required)
+  - specify time period
+  - acceptable values include 1976 - 2014
+  - might not return results for every year if no data for specific geo
+* sic1 (optional)
+  - specify industry sector
+  - options listed on BDS website: http://bit.ly/2BHqjWd
+* fage4 (optional)
+  - specify firm age
+  - options listed on BDS website: http://bit.ly/2BHqjWd
+* fsize
+  - specify firm size
+  - options listed on BDS website: http://bit.ly/2BHqjWd
+* ifsize
+  - specify **initial** firm size
+  - options listed on BDS website: http://bit.ly/2BHqjWd
+
 Reference Materials
-=====================
+^^^^^^^^^^^^^^^^^^^^^
 * General information about the BDS database: http://bit.ly/2BHqjWd
 * Examples and support geographies: http://bit.ly/2CBkeaN
 * List of available metrics/variables: http://bit.ly/2GvGDIE
