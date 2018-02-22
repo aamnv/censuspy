@@ -31,30 +31,30 @@ Pull total employment numbers for Massachusetts (FIPS code 25) in 2014::
 Available Parameters
 ^^^^^^^^^^^^^^^^^^^^^
 * metric (required)
-  - specify metric to pull
-  - full list here: http://bit.ly/2GvGDIE
-  - all metrics/variables labelled "Economic Statistics" work
-    + exceptions include: fage4, fsize, ifsize, sic1, year, year2
+   - specify metric to pull
+   - full list here: http://bit.ly/2GvGDIE
+   - all metrics/variables labelled "Economic Statistics" work
+      + exceptions include: fage4, fsize, ifsize, sic1, year, year2
 * code (conditionally required)
-  - specify state or metro FIPS code
-  - only required if geographic level != us
-  - FIPS state codes: http://bit.ly/2EUgw1c
+   - specify state or metro FIPS code
+   - only required if geographic level != us
+   - FIPS state codes: http://bit.ly/2EUgw1c
 * time (required)
-  - specify time period
-  - acceptable values include 1976 - 2014
-  - might not return results for every year if no data for specific geo
+   - specify time period
+   - acceptable values include 1976 - 2014
+   - might not return results for every year if no data for specific geo
 * sic1 (optional)
-  - specify industry sector
-  - options listed on BDS website: http://bit.ly/2BHqjWd
+   - specify industry sector
+   - options listed on BDS website: http://bit.ly/2BHqjWd
 * fage4 (optional)
-  - specify firm age
-  - options listed on BDS website: http://bit.ly/2BHqjWd
+   - specify firm age
+   - options listed on BDS website: http://bit.ly/2BHqjWd
 * fsize
-  - specify firm size
-  - options listed on BDS website: http://bit.ly/2BHqjWd
+   - specify firm size
+   - options listed on BDS website: http://bit.ly/2BHqjWd
 * ifsize
-  - specify **initial** firm size
-  - options listed on BDS website: http://bit.ly/2BHqjWd
+   - specify **initial** firm size
+   - options listed on BDS website: http://bit.ly/2BHqjWd
 
 Reference Materials
 ^^^^^^^^^^^^^^^^^^^^^
