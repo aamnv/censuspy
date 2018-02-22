@@ -11,6 +11,8 @@ CensusPy is supported on PyPi, so installation is as simple as::
 
   pip install censuspy
 
+CensusPy only supports Python >= 3.3
+
 Business Dynamics Statistics (BDS)
 ===================================
 
@@ -18,7 +20,8 @@ Quickstart
 ^^^^^^^^^^^^^^^^^^^^^
 Initialize the BDS object using your API key & geographic level of query::
 
-  bds = census.bds(api_key=[YOUR_API_KEY_HERE], geo='state')
+  import censuspy
+  bds = censuspy.bds(api_key=[YOUR_API_KEY_HERE], geo='state')
 
 Pull total employment numbers for Massachusetts (FIPS code 25) in 2014::
 
