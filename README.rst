@@ -26,7 +26,7 @@ Pull total employment numbers for Massachusetts (FIPS code 25) in 2014::
   print(ma_emp)
 
 Reference Materials
-^^^^^^^^^^^^^^^^^^^
+=====================
 * General information about the BDS database: http://bit.ly/2BHqjWd
 * Examples and support geographies: http://bit.ly/2CBkeaN
 * List of available metrics/variables: http://bit.ly/2GvGDIE
