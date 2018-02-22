@@ -21,7 +21,7 @@ Quickstart
 Initialize the BDS object using your API key & geographic level of query::
 
   from censuspy import bds
-  state = bds.init(api_key=[YOUR_API_KEY_HERE], geo='state')
+  state = bds.bds(api_key=[YOUR_API_KEY_HERE], geo='state')
 
 Pull total employment numbers for Massachusetts (FIPS code 25) in 2014::
 
