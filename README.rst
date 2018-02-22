@@ -1,6 +1,6 @@
-============
-CensusPy
-============
+==============
+CensusPy v0.2
+==============
 The goal of CensusPy is to expose the vast amount of data the government collects on US citizens to the broader programming community.
 
 Written as a wrapper around existing census APIs, v0.2 of CensusPy currently supports the `Business Dynamics Statistics <https://www.census.gov/data/developers/data-sets/business-dynamics.html>`_ database. But, the end goal will be to support all databases provided by the Census Bureau.
