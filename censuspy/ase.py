@@ -1,9 +1,9 @@
 import requests
 from urllib import parse
 
-class bds(object):
+class cs(object):
 
-	BASE_URL = 'https://api.census.gov/data/timeseries/bds/firms?'
+	BASE_URL = 'https://api.census.gov/data/2014/ase/csa?'
 
 	def __init__(self, api_key=None, geo=None):
 		if (api_key == None or geo == None):
@@ -13,20 +13,25 @@ class bds(object):
 			self.api_key = api_key
 			self.geo = '&' + parse.urlencode({'for': geo}) + ':'
 
-	def get(self, metric=None, time=None, code='*', sic1=0, fage4='m', fsize='m', ifsize='m'):		
-		if (metric == None or time == None):
-			raise ValueError('Missing metric and/or time parameters.')
+	def get(self, metric=None, code='*', empszfi='001', rcpszfi='001', sex='001', vet_group='001',
+			naics2012='00', yibszfi='001', eth_group='001', race_group='00'):		
+		if (metric == None or code == None):
+			raise ValueError('Missing metric and/or code parameters.')
 
 		else:
 			self.code = str(code)
+			metric = metric.upper()
 			self.metric = 'get=' + metric
 			self.params_dict = {
 
-								'time': str(time),
-								'sic1': str(sic1),
-								'fage4': fage4,
-								'fsize': fsize,
-								'ifsize': ifsize,
+								'EMPSZFI': str(empszfi),
+								'RCPSZFI': str(rcpszfi),
+								'SEX': str(sex),
+								'VET_GROUP': str(vet_group),
+								'NAICS2012': str(naics2012),
+								'YIBSZFI': str(yibszfi),
+								'ETH_GROUP': str(eth_group),
+								'RACE_GROUP': str(race_group),
 								'key': self.api_key
 
 								}
