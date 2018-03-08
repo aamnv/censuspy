@@ -22,14 +22,10 @@ class bds(object):
 			self.metric = 'get=' + metric
 			self.params_dict = {
 
-								'time': str(time),
-								'sic1': str(sic1),
-								'fage4': fage4,
-								'fsize': fsize,
-								'ifsize': ifsize,
-								'key': self.api_key
+				'time': str(time), 'sic1': str(sic1), 'fage4': fage4,
+				'fsize': fsize, 'ifsize': ifsize, 'key': self.api_key
 
-								}
+				}
 
 		return self._basic_execution()
 
