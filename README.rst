@@ -10,20 +10,20 @@ But, the end goal will be to support all databases provided by the Census Bureau
 
 Table of Contents
 =================
-* Installation
-* Business Dynamics Statistics (BDS)
-   - BDS Overview
-   - BDS Quick Start
-   - Business Dynamics Statistics (BDS)
-* Annual Survey of Entrepreneurs (ASE)
-   - ASE Overview
-   - ASE Quick Start
-   - Company Summary (CSA)
-   - Characteristics of Businesses (CSCB)
-   - Characteristics of Business Owners (CSCBO)
-* Goals & Roadmap
-* Changelog
-* License
+* `Installation <https://github.com/DnrkasEFF/censuspy#installation>`_
+* `Business Dynamics Statistics (BDS) <https://github.com/DnrkasEFF/censuspy#business-dynamics-statistics-bds>`_
+   - `BDS Overview <https://github.com/DnrkasEFF/censuspy#overview-bds>`_
+   - `BDS Quick Start <https://github.com/DnrkasEFF/censuspy#quickstart-bds>`_
+   - `Business Dynamics Statistics (BDS(1)) <https://github.com/DnrkasEFF/censuspy#parameters-bds>`_
+* `Annual Survey of Entrepreneurs (ASE) <https://github.com/DnrkasEFF/censuspy#annual-survey-of-entrepreneurs-ase>`_
+   - `ASE Overview <https://github.com/DnrkasEFF/censuspy#overview-ase>`_
+   - `ASE Quick Start <https://github.com/DnrkasEFF/censuspy#quickstart-ase>`_
+   - `Company Summary (CSA) <https://github.com/DnrkasEFF/censuspy#overview-csa>`_
+   - `Characteristics of Businesses (CSCB) <https://github.com/DnrkasEFF/censuspy#overview-cscb>`_
+   - `Characteristics of Business Owners (CSCBO) <https://github.com/DnrkasEFF/censuspy#overview-cscbo>`_
+* `Goals & Roadmap <https://github.com/DnrkasEFF/censuspy#goals>`_
+* `Changelog <https://github.com/DnrkasEFF/censuspy#changelog>`_
+* `License <https://github.com/DnrkasEFF/censuspy#license>`_
 
 Installation
 ===============
