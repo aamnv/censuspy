@@ -2,8 +2,9 @@ from setuptools import setup
 setup(
   name = 'censuspy',
   packages = ['censuspy'], 
-  version = '0.2',
+  version = '1.0.0',
   license='MIT',
+  python_requires='>=3',
   description = 'Lightweight wrapper to access gov data',
   author = 'Aadhi Manivannan',
   author_email = 'dnrkaseff360@gmail.com',
