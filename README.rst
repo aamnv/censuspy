@@ -1,5 +1,5 @@
 ================
-CensusPy 1.0.0
+CensusPy 1.1.0
 ================
 The goal of CensusPy is to expose the vast amount of data the government collects on US citizens to the broader programming community. Written as a wrapper around existing census APIs, CensusPy 1.0.0 currently supports:
 
@@ -21,10 +21,10 @@ Table of Contents
    - `Company Summary (CSA) Details <https://github.com/DnrkasEFF/censuspy#overview-csa>`_
    - `Characteristics of Businesses (CSCB) Details <https://github.com/DnrkasEFF/censuspy#overview-cscb>`_
    - `Characteristics of Business Owners (CSCBO) Details <https://github.com/DnrkasEFF/censuspy#overview-cscbo>`_
-* Decennial Census Surname Files (DCSF)
-   - DCSF Overview <https://github.com/DnrkasEFF/censuspy#overview-dcsf>`_
-   - DCSF Quick Start <https://github.com/DnrkasEFF/censuspy#quickstart-dcsf>`_
-   - Decennial Census Surname Files (DCSF) Details <https://github.com/DnrkasEFF/censuspy#parameters-dcsf>`_
+* `Decennial Census Surname Files (DCSF) <https://github.com/DnrkasEFF/censuspy#decennial-census-surnames-files-dcsf>`_
+   - `DCSF Overview <https://github.com/DnrkasEFF/censuspy#overview-dcsf>`_
+   - `DCSF Quick Start <https://github.com/DnrkasEFF/censuspy#quickstart-dcsf>`_
+   - `Decennial Census Surname Files (DCSF) Details <https://github.com/DnrkasEFF/censuspy#parameters-dcsf>`_
 * `Goals & Roadmap <https://github.com/DnrkasEFF/censuspy#goals>`_
 * `Changelog <https://github.com/DnrkasEFF/censuspy#changelog>`_
 * `License <https://github.com/DnrkasEFF/censuspy#license>`_
@@ -396,7 +396,7 @@ Changelog
 * 0.0.1: initial beta release
 * 0.0.2: hot fix to allow imports of specific database wrappers instead of having to import the entire package
 * 1.0.0: **go live!** added support for ASE and implemented minor code changes to make calls more efficient from a resource perspective
-* 1.0.1 added support for DCSF
+* 1.1.0 added support for DCSF
 
 License
 ===============
