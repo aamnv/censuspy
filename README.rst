@@ -22,9 +22,9 @@ Table of Contents
    - `Characteristics of Businesses (CSCB) Details <https://github.com/DnrkasEFF/censuspy#overview-cscb>`_
    - `Characteristics of Business Owners (CSCBO) Details <https://github.com/DnrkasEFF/censuspy#overview-cscbo>`_
 * Decennial Census Surname Files (DCSF)
-   - DCSF Overview
-   - DCSF Quick Start
-   - Decennial Census Surname Files (DCSF) Details
+   - DCSF Overview <https://github.com/DnrkasEFF/censuspy#overview-dcsf>`_
+   - DCSF Quick Start <https://github.com/DnrkasEFF/censuspy#quickstart-dcsf>`_
+   - Decennial Census Surname Files (DCSF) Details <https://github.com/DnrkasEFF/censuspy#parameters-dcsf>`_
 * `Goals & Roadmap <https://github.com/DnrkasEFF/censuspy#goals>`_
 * `Changelog <https://github.com/DnrkasEFF/censuspy#changelog>`_
 * `License <https://github.com/DnrkasEFF/censuspy#license>`_
