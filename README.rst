@@ -1,10 +1,11 @@
 ================
 CensusPy 1.1.0
 ================
-The goal of CensusPy is to expose the vast amount of data the government collects on US citizens to the broader programming community. Written as a wrapper around existing census APIs, CensusPy 1.0.0 currently supports:
+The goal of CensusPy is to expose the vast amount of data the government collects on US citizens to the broader programming community. Written as a wrapper around existing census APIs, CensusPy 1.1.0 currently supports:
 
 * `Business Dynamics Statistics <https://www.census.gov/data/developers/data-sets/business-dynamics.html>`_
 * `Annual Survey of Entrepreneurs <https://www.census.gov/data/developers/data-sets/ase.html>`_
+* `Decennial Census Surname Files <https://www.census.gov/data/developers/data-sets/surnames.html>`_
 
 But, the end goal will be to support all databases provided by the Census Bureau.
 
