@@ -14,13 +14,17 @@ Table of Contents
 * `Business Dynamics Statistics (BDS) <https://github.com/DnrkasEFF/censuspy#business-dynamics-statistics-bds>`_
    - `BDS Overview <https://github.com/DnrkasEFF/censuspy#overview-bds>`_
    - `BDS Quick Start <https://github.com/DnrkasEFF/censuspy#quickstart-bds>`_
-   - `Business Dynamics Statistics (BDS(1)) <https://github.com/DnrkasEFF/censuspy#parameters-bds>`_
+   - `Business Dynamics Statistics (BDS) Details <https://github.com/DnrkasEFF/censuspy#parameters-bds>`_
 * `Annual Survey of Entrepreneurs (ASE) <https://github.com/DnrkasEFF/censuspy#annual-survey-of-entrepreneurs-ase>`_
    - `ASE Overview <https://github.com/DnrkasEFF/censuspy#overview-ase>`_
    - `ASE Quick Start <https://github.com/DnrkasEFF/censuspy#quickstart-ase>`_
-   - `Company Summary (CSA) <https://github.com/DnrkasEFF/censuspy#overview-csa>`_
-   - `Characteristics of Businesses (CSCB) <https://github.com/DnrkasEFF/censuspy#overview-cscb>`_
-   - `Characteristics of Business Owners (CSCBO) <https://github.com/DnrkasEFF/censuspy#overview-cscbo>`_
+   - `Company Summary (CSA) Details <https://github.com/DnrkasEFF/censuspy#overview-csa>`_
+   - `Characteristics of Businesses (CSCB) Details <https://github.com/DnrkasEFF/censuspy#overview-cscb>`_
+   - `Characteristics of Business Owners (CSCBO) Details <https://github.com/DnrkasEFF/censuspy#overview-cscbo>`_
+* Decennial Census Surname Files (DCSF)
+   - DCSF Overview
+   - DCSF Quick Start
+   - Decennial Census Surname Files (DCSF) Details
 * `Goals & Roadmap <https://github.com/DnrkasEFF/censuspy#goals>`_
 * `Changelog <https://github.com/DnrkasEFF/censuspy#changelog>`_
 * `License <https://github.com/DnrkasEFF/censuspy#license>`_
@@ -330,6 +334,51 @@ Other Documentation (CSCBO)
 * `List of available CSCBO metrics/variables <https://api.census.gov/data/2014/ase/cscbo/variables.html>`_
 * `FIPS State Codes <https://www.mcc.co.mercer.pa.us/dps/state_fips_code_listing.htm>`_
 
+Decennial Census Surnames Files (DCSF)
+=======================================
+Overview (DCSF)
+^^^^^^^^^^^^^^^^^^^^^
+The Census Bureau's Census surnames contains rank and frequency data on surnames reported 100 or more times in the decennial census, along with Hispanic origin and race category percentages. The latter are suppressed where necessary for confidentiality. The data focus on summarized aggregates of counts and characteristics associated with surnames, and the data do not in any way identify any specific individuals.
+
+Quickstart (DCSF)
+^^^^^^^^^^^^^^^^^^^^^
+Initialize the DCSF object using your API key & time parameter (2010 or 2000)::
+
+  from censuspy import dcsf
+  us2010 = dcsf.dcsf(api_key=[YOUR_API_KEY_HERE], time=2010)
+
+Pull ranking and count of reported occurences for "Smith" as a surname::
+
+  us2010_smith = us2010.get(metric='count', name="Smith")
+
+  # the wrapper will return a dictionary with three keys: metric, rank, and name
+  # metric will be whatever is passed in the metric parameter (count in this ex.)
+
+  print(us2010_smith['rank']) # will yield the rank of Smith
+  print(us2010_smith['metric']) # will yield the count
+
+Parameters (DCSF)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* ``metric`` (**required**)
+   - specify metric to pull
+   - `full DCSF variables list <https://api.census.gov/data/2010/surname/variables.html>`_
+* ``time`` (**required**)
+   - specify time period
+   - options include 2010 or 2000
+* ``name`` (**conditionally required**)
+   - specify the surname you'd like search for
+   - will return "N/A" if surname is not available
+* ``rank`` (**conditionally required**)
+   - specify a surname rank to search on
+   - will return "N/A" if rank is not available
+* Either ``name`` or ``rank`` need to be specified otherwise the wrapper will raise a ValueError for missing parameters
+
+Other Documentation (DCSF)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+* `General information about the DCSF database <https://www.census.gov/data/developers/data-sets/surnames.html>`_
+* `DCSF API call examples and supported geographies <https://api.census.gov/data/2010/surname/examples.html>`_
+* `List of available DCSF metrics/variables <https://api.census.gov/data/2010/surname/variables.html>`_
+
 Goals
 ===============
 Broadly speaking, my goal is to cover all the business-focused datasets before moving to the purely demographic data. The main motivation behind that is personal, since I'm deriving personal value from developing this wrapper. That being said -- if there is significant interest in exposing a specific dataset, then I'm more than happy to entertain that as well. Please feel free to send any requests to dnrkaseff360@gmail.com.
@@ -337,6 +386,7 @@ Broadly speaking, my goal is to cover all the business-focused datasets before m
 **Roadmap**:
 
 * Annual Survey of Entrepreneurs (March 2018) [**DONE**]
+* Decennial Census Surname Files (March 2018) [**DONE**]
 * County Business Patterns and Nonemployer Statistics (April 2018)
 * Economic Census (May 2018)
 * Economic Indicators (June 2018)
@@ -346,6 +396,7 @@ Changelog
 * 0.0.1: initial beta release
 * 0.0.2: hot fix to allow imports of specific database wrappers instead of having to import the entire package
 * 1.0.0: **go live!** added support for ASE and implemented minor code changes to make calls more efficient from a resource perspective
+* 1.0.1 added support for DCSF
 
 License
 ===============
@@ -369,4 +420,4 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE. 
+SOFTWARE.
